@@ -5,13 +5,8 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-app.get('/', function(req, res){
-    res.sendFile(path.join(`${__dirname}/app/public/home.html`));
-});
-
-app.get('/survey', function(req, res){
-    res.sendFile(path.join(`${__dirname}/app/public/survey.html`));
-});
+const htmlRoutes = require('./app/routing/htmlRoutes');
+htmlRoutes(app);
 
 
 
