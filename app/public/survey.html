@@ -21,31 +21,39 @@
       <p>Then find the friend with the greatest compatibility!</p>
     </div>
 
-    <form action="/action_page.php">
-      <div class="m-3">
+    <form method="POST" role="form">
+        <div class="form-group m-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+          </div>
+          <div class="form-group m-3">
+            <label for="photo">Picture Link</label>
+            <input type="link" class="form-control" id="photo" placeholder="Link to your picture" name="photo">
+          </div>
+      <div class="form-group m-3">
         <h2>Question 1</h2>
         <p>
           it easy for you to show yourself love or speak kindly to yourself?
         </p>
         <select name="question1" id="question1" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
           <option value="5">5 </option>
         </select>
       </div>
-      <div class="m-3">
+      <div class=" form-group m-3">
         <h2>Question 2</h2>
         <p>
           You like outdoors activities the most?
         </p>
         <select name="question2" id="question2" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -54,11 +62,11 @@
           Do you feel nervvous whe people to feel when they’re around you?
         </p>
         <select name="question3" id="question3" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -67,11 +75,11 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question4" id="question4" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -80,11 +88,11 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question5" id="question5" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -93,11 +101,11 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question6" id="question6" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -106,11 +114,11 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question7" id="question7" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -119,11 +127,11 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question8" id="question8" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
       <div class="m-3">
@@ -132,11 +140,11 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question9" id="question9" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree) </option>
         </select>
       </div>
       <div class="m-3">
@@ -145,19 +153,41 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question10" id="question10" class="custom-select mb-3">
-          <option selected value="1">1 (strongly disagree)</option>
+          <option value="1">1 (strongly disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
           <option value="4">4 </option>
-          <option value="5">5 </option>
+          <option value="5">5 (Strongly Agree)</option>
         </select>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      <button type="submit" class="btn btn-primary btn-lg" id="submit_btn">Submit</button>
     </form>
   </div>
   </div>
+  <script>
+    
+      $("#submit_btn").click(function(event){
+        event.preventDefault();
+        const score = [];
+        for(let i = 1; i<= 10;i++){
+          score.push(parseInt($("#question"+i).val()));
 
+        }
+        console.log(score);
+        const newMatch = {
+          name : $("#name").val().trim(),
+          photo : $("#photo").val().trim(),
+          score : score 
+        }
+        
+        console.log(newMatch);
+        $.post('/api/friends', newMatch, function(data){
+          //data represent a best match friend!
+          console.log(data);
+        });
+      })
+    </script>
 </body>
 
 </html>
