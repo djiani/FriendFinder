@@ -24,11 +24,11 @@
     <form method="POST" role="form">
         <div class="form-group m-3">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
           </div>
           <div class="form-group m-3">
             <label for="photo">Picture Link</label>
-            <input type="link" class="form-control" id="photo" placeholder="Link to your picture" name="photo">
+            <input type="link" class="form-control" id="photo" placeholder="Link to your picture" name="photo" required>
           </div>
       <div class="form-group m-3">
         <h2>Question 1</h2>
@@ -36,6 +36,7 @@
           it easy for you to show yourself love or speak kindly to yourself?
         </p>
         <select name="question1" id="question1" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -49,6 +50,7 @@
           You like outdoors activities the most?
         </p>
         <select name="question2" id="question2" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -62,6 +64,7 @@
           Do you feel nervvous whe people to feel when they’re around you?
         </p>
         <select name="question3" id="question3" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -75,6 +78,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question4" id="question4" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -88,6 +92,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question5" id="question5" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -101,6 +106,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question6" id="question6" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -114,6 +120,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question7" id="question7" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -127,6 +134,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question8" id="question8" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -140,6 +148,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question9" id="question9" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (Strongly Disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -153,6 +162,7 @@
           Your mind is always buzzing with unexplored ideas and plans.
         </p>
         <select name="question10" id="question10" class="custom-select mb-3">
+          <option > </option>
           <option value="1">1 (strongly disagree)</option>
           <option value="2">2 </option>
           <option value="3">3 </option>
@@ -170,22 +180,41 @@
       $("#submit_btn").click(function(event){
         event.preventDefault();
         const score = [];
+        let questionFlag = true;
         for(let i = 1; i<= 10;i++){
-          score.push(parseInt($("#question"+i).val()));
+          let questVal = $("#question"+i).val().trim();
+          if(questVal === ""){
+            $("#question"+i).css({"border-color":"#dc3545"});
+             questionFlag = false;
+          }else{
+            $("#question"+i).css({"border-color":"#ced4da"});
+          }
+          score.push(parseInt(questVal));
 
         }
-        console.log(score);
+        
         const newMatch = {
           name : $("#name").val().trim(),
           photo : $("#photo").val().trim(),
           score : score 
         }
         
-        console.log(newMatch);
-        $.post('/api/friends', newMatch, function(data){
+        if(newMatch.name === ""){
+          $("#name").css({"border-color":"#dc3545"});
+
+        }
+        else if(newMatch.photo === ""){
+          $("#name").css({"border-color":"#ced4da"});
+          $("#photo").css({"border-color":"#dc3545"});
+        }else if(questionFlag){
+          $("#photo").css({"border-color":"#ced4da"});
+          console.log(newMatch);
+          $.post('/api/friends', newMatch, function(data){
           //data represent a best match friend!
           console.log(data);
-        });
+          });
+        }
+        
       })
     </script>
 </body>
