@@ -14,8 +14,9 @@ function apiRoutes(app){
             }, 0);
         });
         console.log(sumArray);
+        console.log('min array: '+ Math.min(...sumArray));
         let indexBestMatch = sumArray.indexOf(Math.min(...sumArray));
-        console.log(indexBestMatch);
+        console.log("index best match "+ indexBestMatch);
         Friends.push(req.body);
         res.json(Friends[indexBestMatch]);
         //return best match friend!

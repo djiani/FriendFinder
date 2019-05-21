@@ -211,12 +211,51 @@
           console.log(newMatch);
           $.post('/api/friends', newMatch, function(data){
           //data represent a best match friend!
-          console.log(data);
+            console.log(data);
+            if(data){
+              $(".modal-body").html(`
+              <h1>${data.name}</h1>
+              <img src=${data.photo} alt="image of best match friend"/>
+              `);
+
+            }else{
+              $(".modal-body").html(`
+              <h2>No best match found! Your are the first in the list </h2>
+              `);
+            }
+            $("#myModal").modal("toggle");
           });
         }
         
       })
     </script>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Best Match Friend</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
 </body>
 
 </html>
