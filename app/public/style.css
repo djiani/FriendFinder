@@ -1,0 +1,16 @@
+body{
+    background-image: url("https://media.giphy.com/media/l3q2Cy90VMhfoA9BC/giphy.gif");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main{
+    padding: 20px;
+    background-color: rgba(20, 148, 137, 0.411);
+    min-height: 50vw;
+  }
+
+  .apiLink{
+      position: relative;
+      bottom: 0px;
+  }
