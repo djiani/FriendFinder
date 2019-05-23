@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -188,9 +189,11 @@
       </div>
   </div>
     <script>
+      
+      
 
       $("#submit_btn").click(function (event) {
-        event.preventDefault();
+         event.preventDefault();
         const score = [];
         let questionFlag = true;
         for (let i = 1; i <= 10; i++) {
@@ -258,8 +261,10 @@
           </div>
 
           <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          
+          <div class="modal-footer clear-fix" style="display:block">
+            <button type="button" class="btn btn-info float-left" ><span><i class="fas fa-heart"></i></span></button>
+            <button type="button" class="btn btn-danger float-right" data-dismiss="modal"><span><i class="fas fa-heart-broken"></i></span></button>
           </div>
 
         </div>
